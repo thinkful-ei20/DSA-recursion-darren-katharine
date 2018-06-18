@@ -90,6 +90,14 @@ function stringSplitter(separator, str){
 
 }
 
-// let myString="foo/bar"
-let myString = 'the  quick brown  fox jumps  over the  lazy dog';
-console.log(stringSplitter(' fox ', myString));
+
+function binaryMaker(num){
+  if(num/2 === 0) {
+    return ' ';
+  }
+
+  let quotient = Math.floor (num/2);
+  return num%2 + '' + binaryMaker(quotient);
+}
+
+console.log(binaryMaker(8));
