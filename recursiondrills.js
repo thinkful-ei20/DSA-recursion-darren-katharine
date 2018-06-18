@@ -79,17 +79,52 @@
 // input to rc: the string, mutated
 // output of rc: cumulative array, modified string
 
-function stringSplitter(separator, str){
-  let indexofSeparator = str.indexOf(separator);
+// function stringSplitter(separator, str){
+//   let indexofSeparator = str.indexOf(separator);
 
-  if(indexofSeparator < 0) {
-    return [str];
-  }
+//   if(indexofSeparator < 0) {
+//     return [str];
+//   }
 
-  return  [str.slice(0,indexofSeparator),  ...stringSplitter(separator, str.slice(indexofSeparator+separator.length))];
+//   return  [str.slice(0,indexofSeparator),  ...stringSplitter(separator, str.slice(indexofSeparator+separator.length))];
 
-}
+// }
 
-// let myString="foo/bar"
-let myString = 'the  quick brown  fox jumps  over the  lazy dog';
-console.log(stringSplitter(' fox ', myString));
+// // let myString="foo/bar"
+// let myString = 'the  quick brown  fox jumps  over the  lazy dog';
+// console.log(stringSplitter(' fox ', myString));
+
+// BINARY REPRESENTATION
+// input to the program --  decimal number
+// output of the program --  binary  version of that number
+// input to each recursive calls  -- Math.floor(num/2)
+// output of each recursive calls -- num%2
+
+//   5/2 = 2     5%2=1
+//   2/2 = 1     2%2=0
+//   1/2 = 0     1%2=1
+
+// function binaryRep(num){
+//   if(num/2 === 0){
+//     return '';
+//   }
+//   let binary = Math.floor(num%2) // 1
+//   return binaryRep(Math.floor(num/2)) + binary
+
+// }
+// console.log(binaryRep(5));
+
+//FACTORIAL
+// input to the program --  num
+// output of the program --  fact(num)
+// input to each recursive calls  -- num - 1
+// output of each recursive calls -- num*num-2
+
+// function factorial(num){
+//   if(num === 1){
+//     return 1;
+//   }
+//   return num * factorial(num-1);
+// }
+
+// console.log(factorial(5));
