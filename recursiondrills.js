@@ -29,18 +29,48 @@
 // output of rc: pushing to a new array, array.slice(1)
 
 
-function doubleArray(holder, array) {
-  //Base case
-  if (array.length === 0) {
-    return holder;
-  }
+// function doubleArray(holder, array) {
+//   //Base case
+//   if (array.length === 0) {
+//     return holder;
+//   }
     
-  //General case
-  holder = [(array[0]*2), ...holder  ];
-  return doubleArray(holder, array.slice(1));
+//   //General case
+//   holder = [(array[0]*2), ...holder  ];
+//   return doubleArray(holder, array.slice(1));
 
+// }
+
+// const myArray = [1, 3, 5, 7];
+// // const myholder = [];
+// console.log(doubleArray([], myArray));
+
+// Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
+// the input: string
+// the output: string reversed
+// input to rc: str.slice(1)
+// output of rc: last letter + 
+// function reverse(str){
+//   if(!str.length){
+//     return "";
+//   }
+//   return str.charAt(str.length-1) + reverse(str.slice(0,-1));
+// }
+// console.log(reverse('string'));
+
+//Nth Triangluar Number
+// the input: number
+// the output: number of dots in triangle
+// input to rc: 
+// output of rc: 
+
+function triangular(n){
+  if(n === 0){
+    return 0;
+  }
+  return n + triangular(n-1);
 }
+//1 + 2 + 3 + 4 + 5
+console.log(triangular(6)); // ----> 15
 
-const myArray = [1, 3, 5, 7];
-// const myholder = [];
-console.log(doubleArray([], myArray));
+
