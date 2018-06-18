@@ -128,17 +128,16 @@
 // }
 
 
-function binaryMaker(num){
-  if(num/2 === 0) {
-    return ' ';
-  }
+// function binaryMaker(num){
+//   if(num/2 === 0) {
+//     return ' ';
+//   }
 
-  let quotient = Math.floor (num/2);
-  return num%2 + '' + binaryMaker(quotient);
-}
+//   let quotient = Math.floor (num/2);
+//   return num%2 + '' + binaryMaker(quotient);
+// }
 
-console.log(binaryMaker(8));
-// console.log(factorial(5));
+// console.log(binaryMaker(5));
 
 //FIBONACCI
 // input to the program --  num (number of times to do the operation)
@@ -146,17 +145,18 @@ console.log(binaryMaker(8));
 // input to each recursive calls  -- array
 // output of each recursive calls -- [...array, (array[array.length-2]+array[array.length-1])]
 
-
-function FIBONACCI( counter, num){
-
-  if(counter === num) {
-    return 'foobar';
-  } else if (num < 3) {
-    return [1, 1]
+function fibonacci(num){
+  if(num < 1){
+    return [];
+  }  
+  if(num === 1){
+    return [1]
   }
-
-  return [counter+1]
+  if(num === 2){
+    return [1,1]
+  }
+  let baseFib  = fibonacci(num-1);
+  return [...baseFib, baseFib[num-3] + baseFib[num-2] ]
 }
 
-
-console.log(FIBONACCI(0, 7));
+console.log(fibonacci(7)); // 1 1 2 3 5 8 13.
