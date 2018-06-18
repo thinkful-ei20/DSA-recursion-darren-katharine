@@ -64,13 +64,35 @@
 // input to rc: 
 // output of rc: 
 
-function triangular(n){
-  if(n === 0){
-    return 0;
+// function triangular(n){
+//   if(n === 0){
+//     return 0;
+//   }
+//   return n + triangular(n-1);
+// }
+// //1 + 2 + 3 + 4 + 5
+// console.log(triangular(6)); // ----> 15
+
+//STRING SPLITTER
+// the input: a string
+// the output: an array
+// input to rc: the string, mutated
+// output of rc: cumulative array, modified string
+
+function stringSplitter(separator, holder, str){
+  if(str.length === 0) {
+    return holder;
   }
-  return n + triangular(n-1);
+
+  if(str.charAt(0) === separator){
+    return stringSplitter(separator, holder, str.slice(1, str.length));
+
+  } else {
+    holder = [...holder, str.charAt(0)];
+    return stringSplitter(separator, holder, str.slice(1, str.length));
+
+  }
 }
-//1 + 2 + 3 + 4 + 5
-console.log(triangular(6)); // ----> 15
 
-
+let myString = 'the quick brown fox jumps over the lazy dog';
+console.log(stringSplitter(' ', [], myString));
