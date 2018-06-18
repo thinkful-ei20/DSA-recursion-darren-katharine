@@ -79,20 +79,17 @@
 // input to rc: the string, mutated
 // output of rc: cumulative array, modified string
 
-function stringSplitter(separator, holder, str){
-  if(str.length === 0) {
-    return holder;
+function stringSplitter(separator, str){
+  let indexofSeparator = str.indexOf(separator);
+
+  if(indexofSeparator < 0) {
+    return [str];
   }
 
-  if(str.charAt(0) === separator){
-    return stringSplitter(separator, holder, str.slice(1, str.length));
+  return  [str.slice(0,indexofSeparator),  ...stringSplitter(separator, str.slice(indexofSeparator+separator.length))];
 
-  } else {
-    holder = [...holder, str.charAt(0)];
-    return stringSplitter(separator, holder, str.slice(1, str.length));
-
-  }
 }
 
-let myString = 'the quick brown fox jumps over the lazy dog';
-console.log(stringSplitter(' ', [], myString));
+// let myString="foo/bar"
+let myString = 'the  quick brown  fox jumps  over the  lazy dog';
+console.log(stringSplitter(' fox ', myString));
