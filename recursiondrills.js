@@ -127,7 +127,6 @@
 //   return num * factorial(num-1);
 // }
 
-<<<<<<< HEAD
 
 function binaryMaker(num){
   if(num/2 === 0) {
@@ -139,6 +138,25 @@ function binaryMaker(num){
 }
 
 console.log(binaryMaker(8));
-=======
 // console.log(factorial(5));
->>>>>>> 9d04d427d1c2468b7f739f3c7c01910850788da2
+
+//FIBONACCI
+// input to the program --  num (number of times to do the operation)
+// output of the program --  an array of the Fib sequence up to, num
+// input to each recursive calls  -- array
+// output of each recursive calls -- [...array, (array[array.length-2]+array[array.length-1])]
+
+
+function FIBONACCI( counter, num){
+
+  if(counter === num) {
+    return 'foobar';
+  } else if (num < 3) {
+    return [1, 1]
+  }
+
+  return [counter+1]
+}
+
+
+console.log(FIBONACCI(0, 7));
